@@ -1,0 +1,4 @@
+Hello, apoorvrana
+Current date is Fri Oct 25 22:42:25 CDT 2024
+User is apoorvrana
+Current directory /Users/apoorvrana/Documents/operating-system-project1/operating-system/shellscripting
