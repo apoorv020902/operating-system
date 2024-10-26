@@ -1,0 +1,8 @@
+Hello from child process with PID: 30751
+Hello from child process with PID: 30752
+Hello from child process with PID: 30753
+Hello from child process with PID: 30754
+Hello from child process with PID: 30755
+Hello from child process with PID: 30756
+Hello from child process with PID: 30757
+Hello from child process with PID: 30758

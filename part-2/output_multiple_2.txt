@@ -1,0 +1,2 @@
+Hello from child process with PID: 30743
+Hello from child process with PID: 30744
