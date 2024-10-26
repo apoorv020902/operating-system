@@ -1,23 +1,25 @@
 #!/bin/bash
 
-temph=`date | cut -c12-13`
-dat=`date +"%A %d in %B of %Y (%r)"`
+# Get the current hour
+current_hour=$(date +"%H")
+# Get the login name
+login_name=$(whoami)
 
-if [ $temph -lt 12 ]
-then
-    msg="Good Morning $LOGNAME, Have nice day!"
+# Determine the greeting based on the time of day
+if [ "$current_hour" -ge 5 ] && [ "$current_hour" -lt 12 ]; then
+    greeting="Good Morning, $login_name!"
+elif [ "$current_hour" -ge 12 ] && [ "$current_hour" -lt 17 ]; then
+    greeting="Good Afternoon, $login_name!"
+elif [ "$current_hour" -ge 17 ] && [ "$current_hour" -lt 21 ]; then
+    greeting="Good Evening, $login_name!"
+else
+    greeting="Hello, $login_name!"
 fi
 
-if [ $temph -ge 12 -a $temph -le 16 ]
-then
-    msg="Good Afternoon $LOGNAME"
+# Check if greetingmsg file exists; if so, delete it
+if [ -f greetingmsg ]; then
+    rm greetingmsg
 fi
 
-if [ $temph -gt 16 -a $temph -le 20 ]
-then
-    msg="Good Evening $LOGNAME"
-fi
-
-#echo $temph
-#echo $dat
-echo -e "$msg\nThis is $dat"
+# Output the greeting to greetingmsg
+echo "$greeting" > greetingmsg
